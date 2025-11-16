@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Architecture Decoupling Is Not All You Need For Unified Multimodal Model">
+  <meta name="keywords" content="Evaluation, Benchmark, Prompts, Dataset, Video Generation, Text-to-Video, Stable Diffusion, AIGC, Image Generation, MMLab, Shanghai AI Lab, World Model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Architecture Decoupling Is Not All You Need For Unified Multimodal Model</title>
+
+<!--   Global site tag (gtag.js) - Google Analytics-->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5ZVQZ7NHC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y5ZVQZ7NHC');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" href="./assets/aia/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/aia/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/aia/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/aia/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./assets/aia/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./assets/aia/js/fontawesome.all.min.js"></script>
+  <script src="./assets/aia/js/bulma-carousel.min.js"></script>
+  <script src="./assets/aia/js/bulma-slider.min.js"></script>
+  <script src="./assets/aia/js/index.js"></script>
+</head>
+<body>
+
+<!-- title -->
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><span style="color:#d6824a; font-weight: bold; font-style: italic">Architecture Decoupling Is Not All You Need For Unified Multimodal Model</span></h1>
+          
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Nov 2025</span>
+        </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+                <a href="https://zhengdian1.github.io" target="_blank">Dian Zheng</a><sup>1,2*</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://manyuan97.github.io" target="_blank">Manyuan Zhang</a><sup>2&#9993</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=zh-CN&user=PccL82sAAAAJ" target="_blank">Hongyu Li</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://github.com/Jacky-hate" target="_blank">Kai Zou</a><sup>3</sup>,
+            </span>  
+            <span class="author-block">
+                <a href="https://github.com/Alexios-hub" target="_blank">Hongbo Liu</a><sup>4</sup>,
+            </span>            
+            <br>
+            <span class="author-block">
+                <a href="https://ziyuguo99.github.io/" target="_blank">Ziyu Guo</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://tulerfeng.github.io/" target="_blank">Kaituo Feng</a><sup>2</sup>,
+            </span>                  
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=Y8zBpcoAAAAJ&hl=zh-CN" target="_blank">Yexin Liu</a><sup>2</sup>,
+            </span>  
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=-VlvW5IAAAAJ&hl=en" target="_blank">Ying Luo</a><sup>2</sup>,
+            </span>  
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=m4f3F4cAAAAJ&hl=en" target="_blank">Yan Feng</a><sup>2</sup>,
+            </span>  
+            <span class="author-block">
+                <a href="https://openreview.net/profile?id=~Peng_Pei1" target="_blank">Peng Pei</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+                <a href="https://www.ee.cuhk.edu.hk/~hsli/" target="_blank">Hongsheng Li</a><sup>1&#8224</sup>
+            </span>
+          </div>
+          <!-- <br> -->
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">(* equal contributions, &#8224 corresponding authors) </span>
+        </div>
+
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">
+            <sup>1</sup>
+            MMLab, CUHK &nbsp;&nbsp;
+            <sup>2</sup>
+            MeiTuan &nbsp;&nbsp;
+            <br>
+            <sup>3</sup>
+            USTC &nbsp;&nbsp;
+            <sup>4</sup>
+            TJU &nbsp;&nbsp;
+          </span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            
+            <span class="link-block">
+              <a href="https://arxiv.org/abs/2503.21755" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="ai ai-arxiv"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/Vchitect/VBench" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>GitHub</span>
+              </a>
+            </span>
+          </div>
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop" style="width: 50%; max-width: none;">
+      <div class="hero-body">
+            <img src="assets/aia/images/motivation.jpg" style="width:100%; margin-bottom:10px" alt="Teaser."/>
+      <p style="margin-top: 0;">
+        <b>Overview.</b>  In this work, we aim to explore why architectural decoupling improves the performance of unified multimodal models and seek to achieve comparable results without decoupling. 
+        We use cross-modal attention intensity at each layer to represent the strength of cross-modal interaction for each task within that layer. 
+        Surprisingly, we find that regardless of the degree of architectural decoupling, understanding and generation tasks exhibit a negative correlation within layers, 
+        indicating that architectural decoupling does not fundamentally resolve the conflicts between tasks. 
+        We further examine the interaction patterns of current SOTA single-task methods 
+        and observe that as architectural decoupling becomes stronger, the interaction patterns increasingly resemble those of single-task models, which explains their performance improvements. 
+        Based on this finding, we propose Attention Interaction Alignment (AIA), a method that explicitly constrains attention interaction patterns during training. 
+        We demonstrate performance improvements on Emu3 and Janus-Pro, narrowing the performance gap with more extensively decoupled architectures.
+           </p>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract. -->
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered" style="margin-top: 10px; margin-bottom: 0px;">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 is-centered">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Unified multimodal models for image generation and understanding represent a significant step toward AGI and have attracted widespread attention from researchers. 
+            The main challenge of this task lies in the difficulty in establishing an optimal training paradigm due to inherent conflicting targets in understanding and generation tasks. 
+            To alleviate these conflicts and pursue higher performance, many researchers adopt varying degrees of model decoupling (e.g., Double image encoders, MOE/MOT architecture, or frozen MLLM). 
+            However, excessive model decoupling can lead to the loss of interleave generation ability, undermining the original intent of unified models. 
+            In this work, we aim to explore how to mitigate task conflicts without resorting to model decoupling. 
+            Firstly, we analyze why decoupling alleviates conflicts by studying the cross-modal attention behavior of models. 
+            We observe that model decoupling essentially drives models toward task-specific multimodal interaction patterns, as seen in Qwen-VL and HunyuanImage, and that the more thorough the decoupling, the more consistent the behavior becomes.
+            Motivated by this observation, we propose Attention Interaction Alignment (AIA) loss, which explicitly learns Task-Specific multimodal interaction patterns during training. 
+            To demonstrate the generalizability of our AIA loss, we apply it to Emu3 and Janus-Pro during SFT and post-training stage respectively. 
+            Without bells and whistles, AIA not only refines cross-modal attention patterns, but also boosts both generation and understanding performance.
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<!--/ Abstract. -->
+
+
+
+<!-- Radar_Recent Models -->
+<section class="section" style="margin-top:-50px; margin-bottom:-50px;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <div class="section-title">
+          <h2 class="title is-3 is-centered">System-level comparison on widely used image understanding and generation benchmarks.</h2>
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column">
+            <div class="publication-img">
+              <img id="architecture" src="assets/aia/images/aia.jpg" style="width:600px; margin-top:10px;margin-bottom:10px;"/>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- BibTeX -->
+<section class="hero is-light is-small" id="BibTeX" >
+  <div class="container is-max-desktop content" style="margin-top: 40px; margin-bottom: 20px;">
+    <h2 class="title">BibTeX</h2>
+    <p>If you find our work useful, please consider citing our works:</p>
+    <pre><code>@article{zheng2025vbench2,
+      title={Architecture Decoupling Is Not All You Need For Unified Multimodal Model},
+      author={Zheng, Dian and Zhang, Manyuan and Li, Hongyu and Zou, Kai and Liu, Hongbo and Guo, Ziyu and Feng, Kaituo and Liu, Yexin and Luo, Ying and Feng, Yan and Pei, Peng and Li, Hongsheng},
+      journal={arXiv preprint arXiv:2503.21755},
+      year={2025}
+}
+
+</code></pre>
+  </div>
+</section>
+
+
+
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://vchitect.github.io/VBench-2.0-project/">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Vchitect/VBench-2.0" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page. If you want to reuse their <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
